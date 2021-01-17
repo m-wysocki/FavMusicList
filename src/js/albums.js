@@ -1,11 +1,12 @@
 import { updateAlbumList } from "./albumListView";
 
-export function addAlbum(id, title, artist) {
+export function addAlbum(title, artist, bestOfTheBest = false) {
   const albums = getAlbumsFromLocalStorage();
   const newAlbum = {
-    id,
+    id: generateNewAlbumID(),
     title,
     artist,
+    bestOfTheBest,
   };
   albums.push(newAlbum);
   updateAlbums(albums);
@@ -17,12 +18,22 @@ export function removeAlbum(id) {
   updateAlbums(albums);
 }
 
+export function toggleBestAlbum(id) {
+  const albums = getAlbumsFromLocalStorage();
+  albums.map((album) => {
+    if (album.id === id) {
+      album.bestOfTheBest = !album.bestOfTheBest;
+    }
+  });
+  updateAlbums(albums);
+}
+
 function updateAlbums(albums) {
   setAlbumsToLocalStorage(albums);
   updateAlbumList();
 }
 
-export function generateNewAlbumID() {
+function generateNewAlbumID() {
   const albums = getAlbumsFromLocalStorage();
   if (albums.length < 1) return 1;
 

@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "@fortawesome/fontawesome-free/css/all.css";
 import "./scss/main.scss";
 
-import { addAlbum, generateNewAlbumID, removeAlbum } from "./js/albums";
+import { addAlbum, removeAlbum, toggleBestAlbum } from "./js/albums";
 import { updateAlbumList } from "./js/albumListView";
 
 window.addEventListener("DOMContentLoaded", (event) => {
@@ -13,16 +13,24 @@ window.addEventListener("DOMContentLoaded", (event) => {
   if (addNewAlbumForm) {
     addNewAlbumForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      const albumID = generateNewAlbumID();
-      addAlbum(albumID, e.target[0].value, e.target[1].value);
+      addAlbum(e.target[0].value, e.target[1].value);
     });
   }
 
-  const albumList = document.getElementById("albumList");
-  albumList.addEventListener("click", (e) => {
-    const albumID = parseInt(
-      e.target.closest("li[data-album-id]").getAttribute("data-album-id")
-    );
-    removeAlbum(albumID);
-  });
+  const albumLists = document.getElementsByClassName("album-list");
+  for (let albumList of albumLists) {
+    albumList.addEventListener("click", (e) => {
+      const clickedElement = e.target;
+      const albumID = parseInt(
+        clickedElement
+          .closest("li[data-album-id]")
+          .getAttribute("data-album-id")
+      );
+      if (clickedElement.classList.contains("album__remove")) {
+        removeAlbum(albumID);
+      } else if (clickedElement.classList.contains("album__toggle-best")) {
+        toggleBestAlbum(albumID);
+      }
+    });
+  }
 });
