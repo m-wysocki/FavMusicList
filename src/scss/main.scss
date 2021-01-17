@@ -1,0 +1,13 @@
+h1{
+  @media (max-width: 576px){
+    font-size: 2rem;
+  }
+}
+.album__icon{
+  cursor: pointer;
+  transition: color .3s ease-in-out;
+  &:hover, &--active{
+    color: #e80000;
+  }
+}
+

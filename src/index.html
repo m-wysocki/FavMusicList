@@ -5,36 +5,38 @@
 		<meta charset="utf-8">
 	</head>
 	<body>
-		<div class="container mt-5">
-			<h1>FavMusicList</h1>
+		<div class="container mt-5 mb-5 mb-sm-5">
+			<h1>🎵 FavMusicList</h1>
 			<div class="row mt-5">
-				<div class="col-6 pr-5">
+				<div class="col-12 col-lg-6 order-1 order-lg-0 pr-lg-4 pr-xl-5">
 					<div class="card">
 						<div class="card-header">
-							<b>Best of the best albums</b>
+							<b>⭐ Best of the best albums</b>
 						</div>
 						<ul class="album-list album-list--best list-group list-group-flush"></ul>
 					</div>
 					<div class="card mt-5">
 						<div class="card-header">
-							<b>Album list</b>
+							<b>📃 Album list</b>
 						</div>
 						<ul class="album-list album-list--normal list-group list-group-flush"></ul>
 					</div>
 				</div>
-				<div class="col-6 pl-5">
-					<h4 class="mb-4">Add new album</h4>
-					<form id="addNewAlbumForm" action="">
-						<div class="mb-4">
-							<label for="album" class="form-label">Album name</label>
-							<input type="text" class="form-control" id="album" placeholder="Abbey Road" required="required">
-						</div>
-						<div class="mb-4">
-							<label for="artist" class="form-label">Artist</label>
-							<input type="text" class="form-control" id="artist" placeholder="The Beatles" required="required">
-						</div>
-						<button type="submit" class="btn btn-primary mt-3"><i class="mr-1 fas fa-plus"></i> add to list</button>
-					</form>
+				<div class="col-12 col-lg-6 order-0 order-lg-1 mb-5 mb-lg-0 ">
+					<div class="bg-light p-4">
+						<h4 class="mb-4">💽 Add new album</h4>
+						<form id="addNewAlbumForm" action="">
+							<div class="mb-4">
+								<label for="album" class="form-label">Album name</label>
+								<input type="text" class="form-control" id="album" placeholder="Abbey Road" required="required">
+							</div>
+							<div class="mb-4">
+								<label for="artist" class="form-label">Artist</label>
+								<input type="text" class="form-control" id="artist" placeholder="The Beatles" required="required">
+							</div>
+							<button type="submit" class="btn btn-primary mt-3"><i class="mr-1 fas fa-plus"></i> add to list</button>
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -26,9 +26,11 @@ window.addEventListener("DOMContentLoaded", (event) => {
           .closest("li[data-album-id]")
           .getAttribute("data-album-id")
       );
-      if (clickedElement.classList.contains("album__remove")) {
+      if (clickedElement.classList.contains("album__icon--remove")) {
         removeAlbum(albumID);
-      } else if (clickedElement.classList.contains("album__toggle-best")) {
+      } else if (
+        clickedElement.classList.contains("album__icon--toggle-best")
+      ) {
         toggleBestAlbum(albumID);
       }
     });
