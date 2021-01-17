@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl-PL">
+<html lang="en">
 	<head>
 		<title>FavMusicList</title>
 		<meta charset="utf-8">
@@ -7,6 +7,45 @@
 	<body>
 		<div class="container mt-5">
 			<h1>FavMusicList</h1>
+			<div class="row mt-5">
+				<div class="col-6 pr-5">
+					<div class="card">
+						<div class="card-header">
+							<b>Best of the best</b>
+						</div>
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item d-flex align-items-center justify-content-between">
+								<span><i>Abbey Road</i> – The Beatles</span>
+								<div>
+									<i class="far fa-trash-alt"></i>
+									<i class="far fa-heart ml-2"></i>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="card mt-5">
+						<div class="card-header">
+							<b>Music list</b>
+						</div>
+					</div>
+				</div>
+				<div class="col-6 pl-5">
+					<h4 class="mb-4">Add new music</h4>
+					<form action="">
+						<div class="mb-4">
+							<label for="album" class="form-label">Album name</label>
+							<input type="email" class="form-control" id="album" placeholder="Abbey Road" required="required">
+						</div>
+						<div class="mb-4">
+							<label for="artist" class="form-label">Artist</label>
+							<input type="email" class="form-control" id="artist" placeholder="The Beatles" required="required">
+						</div>
+						<button type="submit" class="btn btn-primary mt-3"><i class="mr-1 fas fa-plus"></i> add to list</button>
+					</form>
+				</div>
+			</div>
+			
+		
 		</div>
 		
 		<script src="index.js"></script>
