@@ -14,6 +14,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     addNewAlbumForm.addEventListener("submit", (e) => {
       e.preventDefault();
       addAlbum(e.target[0].value, e.target[1].value);
+      addNewAlbumForm.reset();
     });
   }
 
